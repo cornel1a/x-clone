@@ -28,7 +28,8 @@ app.get("/", (req, res) => {
 });
 */
 
-app.use(express.json()); //middleware to parse the req.body
+app.use(express.json({limit:"5mb"})); //middleware to parse the req.body
+// limit shouldn't be too high to prevent DOS attack
 app.use(express.urlencoded({extended: true})); // to parse form data
 
 app.use(cookieParser());
