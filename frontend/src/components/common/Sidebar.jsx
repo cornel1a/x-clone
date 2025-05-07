@@ -35,7 +35,8 @@ const Sidebar = () => {
 		},
 	});
 
-	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
+	//const { data: authUser } = useQuery({ queryKey: ["authUser"] });
+	const authUser = queryClient.getQueryData(["authUser"]);
 	// replace below hardcode value
 	// const data = {
 	// 	fullName: "John Doe",
